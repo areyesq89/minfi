@@ -209,6 +209,19 @@ setMethod(
 
 # Exported functions -----------------------------------------------------------
 
+# object <- readRDS("/Users/reyes/prueba_meth.rds")
+# what = "Beta"
+# maxGap = 500
+# blockMaxGap = 2.5 * 10^5
+# maxClusterWidth = 1500
+# dataSummary = colMeans
+# na.rm = FALSE
+# returnBlockInfo = TRUE
+# islandAnno = NULL
+# verbose = TRUE
+# require("IlluminaHumanMethylation450kanno.ilmn12.hg19", character.only=TRUE)
+# sapply(list.files("R", pattern=".R$", full.names=TRUE), source)
+
 # NOTE: Collapses a minfi object into islands, shores, and defines block regions
 cpgCollapse <- function(object, what = c("Beta", "M"), maxGap = 500,
                         blockMaxGap = 2.5 * 10^5, maxClusterWidth = 1500,
@@ -255,6 +268,8 @@ cpgCollapse <- function(object, what = c("Beta", "M"), maxGap = 500,
             dataSummary = dataSummary,
             na.rm = na.rm,
             verbose = verbose)
+    }else{
+        collapsed_cn <- NULL
     }
 
     # Construct output
